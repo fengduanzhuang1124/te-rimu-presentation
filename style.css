@@ -1,0 +1,484 @@
+html, body {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+/* final unified and fixed styles for river screen container and layout */
+
+/* General screen layout fix */
+section.screen {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 100px 40px 120px;
+  box-sizing: border-box;
+  background: url('assets/background.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: 0;
+}
+html, body {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+}
+h1, h2 {
+  color: white;
+  font-family: 'Georgia', serif;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  letter-spacing: 1px;
+  animation: fadeInText 1.5s ease-out forwards;
+}
+
+/* Optional: Different size for h1 and h2 */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Fade-in animation */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+section#screen2 {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-snap-align: start;
+}
+
+.river-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  position: relative;
+  z-index: 2;
+}
+
+.river-step {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  padding: 40px;
+  position: relative;
+  background-color: rgba(192, 229, 180, 0.75);
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(0, 80, 40, 0.2);
+}
+
+.river-step:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.river-step img {
+  width: 320px;
+  border-radius: 14px;
+  box-shadow: 0 0 12px rgba(0, 80, 40, 0.35);
+  transition: transform 0.4s ease;
+  background-color: #d6f3cd;
+  /*padding: 8px;*/
+}
+
+.river-step img.taniwha-animate {
+  animation: floatTaniwha 4s ease-in-out infinite;
+}
+
+.river-marker {
+  background: radial-gradient(circle, #90ee90, #3fae6b);
+  border: 2px solid #1e5631;
+  color: #004d2c;
+  padding: 14px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 14px #9effa0;
+  font-weight: bold;
+  font-size: 20px;
+  transition: transform 0.2s ease;
+  margin: 20px;
+  z-index: 10;
+}
+
+.river-marker:hover {
+  transform: scale(1.15);
+}
+
+.river-popup {
+  display: none;
+  position: absolute;
+  background: url('assets/river.jpg') no-repeat center;
+  background-size: cover;
+  padding: 24px;
+  border-radius: 14px;
+  max-width: 520px;
+  box-shadow: 0 0 16px rgba(0,0,0,0.25);
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1d3f34;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 100, 60, 0.2);
+}
+
+.river-popup.active {
+  display: block;
+}
+
+@keyframes floatTaniwha {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+section#screen2 {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 40px 120px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+}
+
+.river-step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgba(192, 229, 180, 0.75);
+  border-radius: 100px 50px 100px 50px;
+  box-shadow: 0 0 12px rgba(0, 80, 40, 0.2);
+  padding: 40px;
+  transition: all 0.5s ease;
+}
+/* Floating taniwha icon */
+#floatingTaniwha {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 180px;
+  height: 120px;
+  cursor: pointer;
+  z-index: 9999;
+  animation: bounceTaniwha 2s infinite ease-in-out;
+}
+
+@keyframes bounceTaniwha {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+#taniwhaPopup {
+  display: none;
+  position: fixed;
+  bottom: 120px;
+  right: 30px;
+  background: #d8f7d0;
+  border: 2px solid #8dcf7e;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0,100,60,0.3);
+  z-index: 9999;
+  width: 360px;
+  font-size: 14px;
+  color: #204f24;
+  line-height: 1.6;
+}
+
+#taniwhaPopup.active {
+  display: block;
+}
+/* Cute animation effect for screen3 video text */
+#screen3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url('assets/background.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 60px;
+}
+
+#screen3 .video-box {
+  background: rgba(220, 255, 220, 0.95);
+  padding: 30px;
+  border-radius: 40px 5px 40px 5px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  max-width: 900px;
+  width: 90%;
+  text-align: center;
+  font-family: 'Segoe Print', sans-serif;
+  font-size: 15px;
+  color: #1b3c1b;
+  position: relative;
+  overflow: hidden;
+  animation: slideInFade 1.3s ease forwards;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+@keyframes slideInFade {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#screen3 h2 {
+  font-size: 28px;
+  color: #2e513c;
+  font-family: 'Comic Sans MS', cursive;
+  margin-bottom: 20px;
+}
+
+#screen3 video {
+  margin-top: 24px;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+
+#screen3 .video-box .text-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  text-align: left;
+  padding: 10px 20px;
+  position: relative;
+}
+
+#screen3 .video-box .text-columns .left,
+#screen3 .video-box .text-columns .right {
+  flex: 1;
+  background: rgba(240, 255, 240, 0.9);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+/*#screen3 .video-box .text-columns .left {*/
+/*  border-top-left-radius: 60px 30px;*/
+/*  border-bottom-left-radius: 60px 30px;*/
+/*  background-image: url('assets/leaf-left.png');*/
+/*  background-size: contain;*/
+/*  background-repeat: no-repeat;*/
+/*  background-position: center;*/
+/*}*/
+
+/*#screen3 .video-box .text-columns .right {*/
+/*  border-top-right-radius: 60px 30px;*/
+/*  border-bottom-right-radius: 60px 30px;*/
+/*  background-image: url('assets/leaf-right.png');*/
+/*  background-size: contain;*/
+/*  background-repeat: no-repeat;*/
+/*  background-position: center;*/
+/*}*/
+
+#screen3 .video-box .text-columns p {
+  margin: 0 0 10px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+#screen3 .video-box .text-columns p span {
+  display: inline-block;
+  padding-left: 1em;
+}
+
+#screen3 .video-box h4 {
+  margin-top: 30px;
+  color: #305f3d;
+  font-size: 18px;
+}
+
+.video-pair {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap; /* 小屏设备下换行 */
+}
+
+.video-block {
+  flex: 1;
+  max-width: 480px;
+  text-align: center;
+}
+
+.video-block video {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.video-block h4 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #2e513c;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.report-trigger {
+  width: 100px;
+  margin-top: 30px;
+  cursor: pointer;
+  border-radius: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.report-trigger:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+#pdfPopup {
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 70%;
+  background: #f4fdf0;
+  border: 3px solid #a0d8a0;
+  border-radius: 20px;
+  z-index: 10000;
+  padding: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+
+#pdfPopup.active {
+  display: block;
+}
+
+#pdfPopup .popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #225522;
+}
+
+#pdfPopup button {
+  background: #f99;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+#pdfPopup button:hover {
+  background: #d55;
+}
+
+.tree-grow {
+  font-size: 2rem;
+  cursor: pointer;
+  animation: growTree 2.5s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+
+.tree-grow:hover {
+  transform: scale(0.9);
+}
+
+
+/* 树图标外部容器 */
+.river-marker {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: transparent;
+  animation: glowPulse 2.5s ease-in-out infinite;
+  box-shadow: 0 0 12px ;
+}
+
+/* 树图标本身样式 */
+.tree-icon {
+  width: 40px;
+  height: 120px;
+  object-fit: contain;
+  pointer-events: none;
+  animation: growTree 2.5s ease-in-out infinite;
+}
+
+/* 呼吸动画：慢慢变大缩小 */
+@keyframes growTree {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+/* 光环发光动画：绿色发亮闪烁 */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 8px ;
+  }
+  50% {
+    box-shadow: 0 0 16px, 0 0 32px ;
+  }
+  100% {
+    box-shadow: 0 0 8px ;
+  }
+}

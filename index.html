@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te Rimu's Tale Presentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section class="screen" id="screen1" style="position: relative; height: 100vh; ">
+    <div class="overlay" style="position: absolute; inset: 0; background-color: rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem; color: white; text-shadow: 1px 1px 4px rgba(0,0,0,0.7); animation: fadeIn 2s ease-out;">
+
+        <h1 style="font-size: 3rem; margin-bottom: 2rem; font-family: 'Georgia', serif; letter-spacing: 1px;">My Work in <em>Te Rimu’s Tale</em></h1>
+
+        <ul style="list-style: none; padding: 0; max-width: 600px;">
+            <li style="display: flex; align-items: center; margin: 1rem 0; animation: slideInLeft 1s ease-out;">
+                <img src="assets/1_Taniwha.png" style="width: 60px; height: 55px; margin-right: 1rem;" alt="Taniwha Icon">
+                <span style="font-size: 1.5rem;">Story Design</span>
+            </li>
+            <li style="display: flex; align-items: center; margin: 1rem 0; animation: slideInLeft 1.2s ease-out;">
+                <img src="assets/2_TaniwhaAngry.png" style="width: 60px; height: 55px; margin-right: 1rem;" alt="Taniwha Icon">
+                <span style="font-size: 1.5rem;">Story Video Creation</span>
+            </li>
+            <li style="display: flex; align-items: center; margin: 1rem 0; animation: slideInLeft 1.4s ease-out;">
+                <img src="assets/3_Taniwha.png" style="width: 60px; height: 55px; margin-right: 1rem;" alt="Taniwha Icon">
+                <span style="font-size: 1.5rem;">Environmental Data & Visuals</span>
+            </li>
+            <li style="display: flex; align-items: center; margin: 1rem 0; animation: slideInLeft 1.6s ease-out;">
+                <img src="assets/4_TaniwhaHappy.png" style="width: 60px; height: 55px; margin-right: 1rem;" alt="Taniwha Icon">
+                <span style="font-size: 1.5rem;">Skylar & 1642134</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<style>
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: scale(0.95); }
+        100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes slideInLeft {
+        0% { transform: translateX(-50px); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+    }
+</style>
+<script>
+    function togglePopup(id) {
+        const popup = document.getElementById(id);
+        popup.style.display = popup.style.display === 'none' ? 'block' : 'none';
+    }
+
+
+        function togglePdfPopup() {
+        const popup = document.getElementById("pdfPopup");
+        popup.style.display = popup.style.display === "block" ? "none" : "block";
+    }
+
+
+</script>
+<section class="screen" id="screen2">
+    <div class="overlay">
+
+        <h2>River Timeline – Story Journey</h2>
+        <img id="floatingTaniwha" src="assets/fllow.png" onclick="document.getElementById('taniwhaPopup').classList.toggle('active')" />
+
+        <div id="taniwhaPopup">
+            <strong>Discussion Questions I Explored:</strong><br><br>
+            Is Tawa, our heroine, a real figure or symbolic legend?<br>
+            Is it suitable for her to lead the environmental movement?<br>
+            If she’s not a modern person, should an ordinary person carry on her mission?<br>
+            I chose to let Tawa raise a tokotoko (ceremonial staff). Does this item show authority? Are there better symbols?<br><br>
+            ✅ Tawa was confirmed to be a modern figure and a culturally respectful leader.<br>
+            ✅ Tokotoko is an appropriate symbol—it represents wisdom, speaking authority, and ancestral leadership in Māori culture.<br>
+            ✅ Other cultural symbols may include: kākahu (woven cloak), pounamu (greenstone), moko (facial tattoo), waka (canoe), and carvings.
+        </div>
+
+        <div class="river-timeline">
+            <!-- Step 1 -->
+            <div class="river-step">
+                <img src="assets/village-life.webp" alt="18th Century Village">
+                <div class="river-marker tree-grow"    onclick="togglePopup('popup1')">
+                    <img src="assets/tree.png" width="40" height="40" style="pointer-events: none; " class="tree-icon">
+                </div>
+                <div id="popup1" class="river-popup">
+                    <h4>Part One: Life in the 18th Century</h4>
+                    <p>Long ago, in the 18th century, the Waioweka tribe lived in harmony with nature. They relied on the river for fishing, gathered from the forest, and lived on the land with reverence.</p>
+                </div>
+            </div>
+
+            <!-- Step 2: Taniwha -->
+            <div class="river-step">
+                <img src="assets/taniwha.png" alt="Taniwha" class="taniwha-animate">
+                <div class="river-marker tree-grow" onclick="togglePopup('popup2')"><img src="assets/tree.png" width="40" height="40" style="pointer-events: none;" class="tree-icon"></div>
+                <div id="popup2" class="river-popup">
+                    <p>They honored their guardian, Te Rimu—a mysterious taniwha (Māori spirit), who could transform into a towering tree or a giant eel gliding through the water, symbolizing the power and spirit of nature. "The river and I are one. Protect it, and you protect the future."</p>
+                    <p>"As long as the river stays clear, Te Rimu will protect us. We must protect the land in return." This was more than belief—it was a way of life.</p>
+                </div>
+            </div>
+
+            <!-- Step 3: Invasion -->
+            <div class="river-step">
+                <img src="assets/invasion.webp" alt="Invasion Begins">
+                <div class="river-marker tree-grow" onclick="togglePopup('popup3')"><img src="assets/tree.png" width="40" height="40" style="pointer-events: none;" class="tree-icon"></div>
+                <div id="popup3" class="river-popup">
+                    <p>As time passed, strangers arrived. They brought tools, gunpowder, and a hunger for resources. Forests were cut down. Land was taken. The river grew restless. The people of Waioweka fought back, but their traditional weapons were no match for the invaders’ guns.</p>
+                </div>
+            </div>
+
+            <div class="river-step">
+                <img src="assets/invasion1.webp" alt="Te Rimu Awakens">
+                <div class="river-marker tree-grow" onclick="togglePopup('popup4')"><img src="assets/tree.png" width="40" height="40" style="pointer-events: none;" class="tree-icon"></div>
+                <div id="popup4" class="river-popup">
+                    <p>Praying for Te Rimu to awaken. The waters churned. Waves roared. From the riverbed rose a giant figure—Te Rimu, awakened in anger.</p>
+                </div>
+            </div>
+
+            <div class="river-step">
+                <img src="assets/invasion2.webp" alt="Victory">
+                <div class="river-marker tree-grow" onclick="togglePopup('popup5')"><img src="assets/tree.png" width="40" height="40" style="pointer-events: none;" class="tree-icon"></div>
+                <div id="popup5" class="river-popup">
+                    <p>He stirred the river, summoned mighty waves, and helped the warriors strike back from within the water. Caught off guard, the invaders were scattered and defeated. The battle ended. The river calmed. Waioweka knew peace again. But the people never forgot—Nature remembers.</p>
+                </div>
+            </div>
+
+            <!-- Step 4: Aroha -->
+            <div class="river-step">
+                <img src="assets/aroha.webp" alt="Aroha by the River">
+                <div class="river-marker tree-grow" onclick="togglePopup('popup6')"><img src="assets/tree.png" width="40" height="40" style="pointer-events: none;" class="tree-icon"></div>
+                <div id="popup6" class="river-popup">
+                    <h4>Part Three: Aroha’s Discovery</h4>
+                    <p>One quiet evening, a girl named Aroha sat by the riverbank. Suddenly, a strange piece of driftwood floated toward her. It blinked. A faint voice rose: "The river and I are one... Protect it..." The river was sick. Te Rimu was fading.</p>
+                </div>
+            </div>
+
+            <!-- Step 5: Tawa Leads -->
+            <div class="river-step">
+                <img src="assets/tawa.webp" alt="Tawa speaks">
+                <div class="river-marker tree-grow" onclick="togglePopup('popup7')"><img src="assets/tree.png" width="40" height="40" style="pointer-events: none;" class="tree-icon"></div>
+                <div id="popup7" class="river-popup">
+                    <h4>Part Four: A Call to Guardianship</h4>
+                    <p>Tawa, cloaked in the woven shawl of her ancestors, said: "Te Rimu is not weak from battle, but from our neglect. The Waioweka River is polluted. The forests are shrinking. It is time to act."</p>
+                </div>
+            </div>
+
+            <div class="river-step">
+                <img src="assets/tawa-leads.webp" alt="Tawa leads youth">
+                <div class="river-marker tree-grow" onclick="togglePopup('popup8')"><img src="assets/tree.png" width="40" height="40" style="pointer-events: none;" class="tree-icon"></div>
+                <div id="popup8" class="river-popup">
+                    <p>Raising her tokotoko, she declared: "Our ancestors fought for this land." Children joined her. They wore gloves, used tools, and tested the water. They cleaned rivers, planted trees, and spread the story of Te Rimu.</p>
+                </div>
+            </div>
+
+            <div class="river-step">
+                <img src="assets/4_Tawa.png" alt="Call to Action">
+                <div class="river-marker tree-grow" onclick="togglePopup('popup9')"><img src="assets/tree.png" width="40" height="40" style="pointer-events: none;" class="tree-icon"></div>
+                <div id="popup9" class="river-popup">
+                    <p>"Will you become the next guardian?" Click 'Agree' to join us. In that moment of choice, the Waioweka River began to run clearer—and Te Rimu stirred once more.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePopup(id) {
+            const popup = document.getElementById(id);
+            popup.classList.toggle('active');
+        }
+    </script>
+</section>
+
+
+<section class="screen" id="screen3">
+    <div class="video-box">
+        <h2>Part 2 – Story Video Production</h2>
+        <div class="text-columns">
+            <div class="left">
+                <p>🎬 I created a story demo video to visualize the narrative.</p>
+                <p>🎨 Used Sam’s Te Rimu character model and UI tools to generate visual scenes.</p>
+                <p>🖼️ Combined illustrations (including some by Tanu) for consistency.</p>
+                <p>🎶 Matched each story stage with suitable background music to build emotion.</p>
+            </div>
+            <div class="right">
+                <p>🎵 <strong>Example:</strong></p>
+                <p><span>Part 1 = natural forest sounds</span></p>
+                <p><span>Part 2 = rising tension & river roar</span></p>
+                <p><span>Part 3 = quiet ambient mystery</span></p>
+                <p><span>Part 4 = inspiring, hopeful theme</span></p>
+                <p>✅ The video helps audiences understand the emotional arc of the story.</p>
+            </div>
+        </div>
+
+            <div class="video-pair">
+                <div class="video-block">
+                    <h4>Full Video Demo:</h4>
+                    <video src="assets/full-video.mp4" controls></video>
+                </div>
+                <div class="video-block">
+                    <h4>Sample Clip:</h4>
+                    <video src="assets/sample-clip.mp4" controls></video>
+                </div>
+            </div>
+
+    </div>
+</section>
+
+
+<section class="screen" id="screen4">
+    <div class="left">
+        <h2>Part 3 – Environmental Data Collection</h2>
+        <ul style="list-style: none; padding-left: 0; font-size: 1.3rem;">
+            <li style="margin: 0.5rem 0; animation: slideInLeft 1s ease-out;">🌫️ <strong>Air pollution:</strong> PM2.5, NO₂-related issues</li>
+            <li style="margin: 0.5rem 0; animation: slideInLeft 1.2s ease-out;">🌱 <strong>Soil erosion</strong> & land damage</li>
+            <li style="margin: 0.5rem 0; animation: slideInLeft 1.4s ease-out;">🌊 <strong>River pollution:</strong> E. coli, nitrate, phosphorus</li>
+        </ul>
+
+
+        <img src="assets/data.png" alt="Open Report"  class="report-trigger" onclick="togglePdfPopup()" />
+
+
+        <div id="pdfPopup">
+            <div class="popup-header">
+                <span>📄 Environmental Report</span>
+                <button onclick="togglePdfPopup()">✖</button>
+            </div>
+            <iframe src="assets/myreport.pdf" width="100%" height="500px"></iframe>
+        </div>
+    </div>
+</section>
+<section  class="screen" id="screen5">
+    <h1>
+        Thank you
+    </h1>
+</section>
+
+<!--<script>-->
+<!--    function togglePopup(id) {-->
+<!--        const popup = document.getElementById(id);-->
+<!--        popup.style.display = popup.style.display === 'block' ? 'none' : 'block';-->
+<!--    }-->
+
+<!--    document.body.style.scrollSnapType = 'y mandatory';-->
+<!--    document.body.style.overflowY = 'scroll';-->
+<!--</script>-->
+</body>
+</html>

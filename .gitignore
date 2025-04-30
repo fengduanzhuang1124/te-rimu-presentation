@@ -1,0 +1,9 @@
+
+node_modules/
+.idea/
+*.log
+*.mp4
+*.webp
+.DS_Store
+*.pdf
+*.png
