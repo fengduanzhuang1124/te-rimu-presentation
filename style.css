@@ -482,68 +482,68 @@ section#screen2 {
     box-shadow: 0 0 8px ;
   }
 }
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {*/
 
-  /* 让文字居中，布局改为纵向 */
-  .river-step {
-    flex-direction: column !important;
-    text-align: center;
-    padding: 20px;
-  }
+/*  !* 让文字居中，布局改为纵向 *!*/
+/*  .river-step {*/
+/*    flex-direction: column !important;*/
+/*    text-align: center;*/
+/*    padding: 20px;*/
+/*  }*/
 
-  .river-step img {
-    width: 90%;
-    margin-bottom: 20px;
-  }
+/*  .river-step img {*/
+/*    width: 90%;*/
+/*    margin-bottom: 20px;*/
+/*  }*/
 
-  .river-popup {
-    width: 90%;
-    font-size: 14px;
-  }
+/*  .river-popup {*/
+/*    width: 90%;*/
+/*    font-size: 14px;*/
+/*  }*/
 
-  #pdfPopup {
-    width: 90%;
-    height: 70%;
-    padding: 10px;
-  }
+/*  #pdfPopup {*/
+/*    width: 90%;*/
+/*    height: 70%;*/
+/*    padding: 10px;*/
+/*  }*/
 
-  .video-box {
-    padding: 20px;
-    font-size: 14px;
-  }
+/*  .video-box {*/
+/*    padding: 20px;*/
+/*    font-size: 14px;*/
+/*  }*/
 
-  #screen3 .video-box .text-columns {
-    flex-direction: column;
-    gap: 20px;
-  }
+/*  #screen3 .video-box .text-columns {*/
+/*    flex-direction: column;*/
+/*    gap: 20px;*/
+/*  }*/
 
-  .video-pair {
-    flex-direction: column;
-    gap: 20px;
-  }
+/*  .video-pair {*/
+/*    flex-direction: column;*/
+/*    gap: 20px;*/
+/*  }*/
 
-  .video-block {
-    max-width: 100%;
-  }
+/*  .video-block {*/
+/*    max-width: 100%;*/
+/*  }*/
 
-  #floatingTaniwha {
-    width: 100px;
-    height: auto;
-    bottom: 20px;
-    right: 20px;
-  }
+/*  #floatingTaniwha {*/
+/*    width: 100px;*/
+/*    height: auto;*/
+/*    bottom: 20px;*/
+/*    right: 20px;*/
+/*  }*/
 
-  #taniwhaPopup {
-    width: 90%;
-    bottom: 140px;
-    font-size: 13px;
-  }
+/*  #taniwhaPopup {*/
+/*    width: 90%;*/
+/*    bottom: 140px;*/
+/*    font-size: 13px;*/
+/*  }*/
 
-  h1 {
-    font-size: 2rem;
-  }
+/*  h1 {*/
+/*    font-size: 2rem;*/
+/*  }*/
 
-  h2 {
-    font-size: 1.5rem;
-  }
-}
+/*  h2 {*/
+/*    font-size: 1.5rem;*/
+/*  }*/
+/*}*/
