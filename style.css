@@ -547,3 +547,17 @@ section#screen2 {
 /*    font-size: 1.5rem;*/
 /*  }*/
 /*}*/
+#screen2 {
+  transform-origin: top center;
+}
+
+@media (max-width: 768px) {
+  #screen2 {
+    transform: scale(0.6); /* 根据实际缩放需要调整 */
+    width: 100vw;
+    overflow-x: hidden;
+  }
+}
+body {
+  overflow-x: hidden;
+}
